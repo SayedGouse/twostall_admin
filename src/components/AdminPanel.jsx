@@ -19,7 +19,7 @@ const AdminPanel = () => {
         });
         console.log(response.data);
         if(response.status === 200){
-            
+
             window.location.reload()
         }
         
@@ -36,7 +36,7 @@ const AdminPanel = () => {
 
   const getAppointmentByAdmin = async () => {
     try {
-        const response = await axios.get("http://localhost:5000/api/userAppointment/getAllAppointmentForAdmin");
+        const response = await axios.get("http://twostall_backend.railway.internal/api/userAppointment/getAllAppointmentForAdmin");
         console.log(response.data);
         
         setAppointments(response.data)
