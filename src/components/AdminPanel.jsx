@@ -66,8 +66,10 @@ const AdminPanel = () => {
     
   };
 
-
   const calculateFeedback = () => {
+    if (appointments.length === 0) {
+      return { total: 0, average: 0 };
+    }
     const total = appointments.reduce((sum, appt) => sum + appt.Feedback_Rating, 0);
     const average = (total / appointments.length).toFixed(1);
     return { total, average };
