@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Base_url } from "./Base_url";
 
 const AdminPanel = () => {
   const [appointments, setAppointments] = useState([]);
@@ -13,7 +14,7 @@ const AdminPanel = () => {
     console.log("status before", status, id);
     
     try {
-        const response = await axios.post("http://localhost:5000/api/userAppointment/getAppointmentStatus",{
+        const response = await axios.post(`${Base_url}/userAppointment/getAppointmentStatus`,{
             Id : id,
             Status:status
         });
@@ -36,7 +37,7 @@ const AdminPanel = () => {
 
   const getAppointmentByAdmin = async () => {
     try {
-        const response = await axios.get("https://twostall_backend.railway.internal/api/userAppointment/getAllAppointmentForAdmin");
+        const response = await axios.get(`${Base_url}/userAppointment/getAllAppointmentForAdmin`);
         console.log(response.data);
         
         setAppointments(response.data)
