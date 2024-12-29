@@ -36,7 +36,7 @@ const AdminPanel = () => {
 
   const getAppointmentByAdmin = async () => {
     try {
-        const response = await axios.get("https://twostall_backend.railway.internal/api/userAppointment/getAllAppointmentForAdmin");
+        const response = await axios.get("https://twostallbackend-production.up.railway.app:8080/api/userAppointment/getAllAppointmentForAdmin");
         console.log(response.data);
         
         setAppointments(response.data)
