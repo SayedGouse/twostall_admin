@@ -45,6 +45,7 @@ const AdminPanel = () => {
       setAppointments(response.data);
     } catch (error) {
       console.log("Error fetching data", error);
+      setLoading(false)
     } finally {
       setLoading(false);
     }

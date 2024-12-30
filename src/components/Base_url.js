@@ -1,1 +1,2 @@
-export const Base_url = 'http://localhost:5000/api';
+export const Base_url = 'https://twostallbackend-production.up.railway.app/api';
+
